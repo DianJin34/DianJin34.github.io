@@ -79,6 +79,7 @@ body {
 .resume-viewer #pdfContainer { width: 100%; height: 100%; }
 .resume-viewer object, .resume-viewer embed { width: 100%; height: 100%; border: 0; display: block; background: #0b0f1f; }
 .resume .fallback { margin: 8px 12px 14px; color: var(--muted); font-size: 0.9rem; }
+.resume-viewer #pdfAlt { background: #0b0f1f; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 8px; }
 
 /* Footer */
 .site-footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 18px 0; color: var(--muted); }

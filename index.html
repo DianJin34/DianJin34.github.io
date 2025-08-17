@@ -61,12 +61,14 @@
         <div class="resume-actions">
           <a class="icon-link" href="https://docs.google.com/gview?embedded=1&url=https://dianjin34.github.io/assets/resume.pdf?v=20250816" target="_blank" rel="noopener" title="Open via fallback viewer">Open in browser</a>
           <a class="icon-link" href="assets/resume.pdf?v=20250816" download title="Download PDF">Download</a>
+          <button id="altViewerBtn" class="icon-button" type="button" title="Use alternate viewer">Try alternate viewer</button>
           <button id="closeResume" class="icon-button" aria-label="Close resume">✕</button>
         </div>
       </div>
       <div class="resume-viewer">
         <embed src="assets/resume.pdf?v=20250816#view=FitH" type="application/pdf" width="100%" height="100%" />
         <p class="fallback">If the PDF doesn't display, please use the Download button above or open in a new tab.</p>
+  <div id="pdfAlt" class="hidden" data-src="assets/resume.pdf?v=20250816"></div>
       </div>
     </section>
   </main>
@@ -78,5 +80,6 @@
   </footer>
 
   <script src="js/script.js"></script>
+  <script src="js/pdf-alt.js"></script>
 </body>
 </html>
