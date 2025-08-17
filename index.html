@@ -16,6 +16,7 @@
       <h1 class="logo" aria-label="Dian Jin">Dian Jin</h1>
       <nav class="nav">
         <a href="#about">About</a>
+  <a href="#photos">Photos</a>
       </nav>
     </div>
   </header>
@@ -48,8 +49,47 @@
           </div>
           <figure class="studio-media">
   <img src="assets/images/meialia/meialia.png?v=20250817" alt="Library of Meialia screenshot" class="studio-img" loading="lazy" />
-            <figcaption class="sr-only">Library of Meialia</figcaption>
           </figure>
+        </div>
+      </article>
+    </section>
+
+    <section id="photos" class="cards photos">
+      <article class="card">
+        <h3>Photos — Food</h3>
+        <p class="section-subtitle">Tastes and moments from my kitchen and travels. Little joys, big flavors.</p>
+        <div class="gallery">
+          <img src="assets/images/food/图片_20250817011442.jpg" alt="Food photo 1" loading="lazy" />
+          <img src="assets/images/food/图片_20250817011454.jpg" alt="Food photo 2" loading="lazy" />
+          <img src="assets/images/food/图片_20250817011456.jpg" alt="Food photo 3" loading="lazy" />
+          <img src="assets/images/food/图片_20250817011811.jpg" alt="Food photo 4" loading="lazy" />
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Photos — Me</h3>
+        <p class="section-subtitle">Snapshots of life—work, play, and everything in between.</p>
+        <div class="gallery">
+          <img src="assets/images/me/图片_20250817011448.jpg" alt="Me photo 1" loading="lazy" />
+          <img src="assets/images/me/图片_20250817011449.jpg" alt="Me photo 2" loading="lazy" />
+          <img src="assets/images/me/图片_20250817011457.jpg" alt="Me photo 3" loading="lazy" />
+          <img src="assets/images/me/图片_20250817011500.jpg" alt="Me photo 4" loading="lazy" />
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Photos — Views</h3>
+        <p class="section-subtitle">Scenes that caught my eye—landscapes, city lights, and quiet corners.</p>
+        <div class="gallery">
+          <img src="assets/images/views/图片_20250817011444.jpg" alt="View photo 1" loading="lazy" />
+          <img src="assets/images/views/图片_20250817011446.jpg" alt="View photo 2" loading="lazy" />
+          <img src="assets/images/views/图片_20250817011447.jpg" alt="View photo 3" loading="lazy" />
+          <img src="assets/images/views/图片_20250817011451.jpg" alt="View photo 4" loading="lazy" />
+          <img src="assets/images/views/图片_202508170114511.jpg" alt="View photo 5" loading="lazy" />
+          <img src="assets/images/views/图片_20250817011452.jpg" alt="View photo 6" loading="lazy" />
+          <img src="assets/images/views/图片_20250817011453.jpg" alt="View photo 7" loading="lazy" />
+          <img src="assets/images/views/图片_202508170114571.jpg" alt="View photo 8" loading="lazy" />
+          <img src="assets/images/views/图片_20250817011458.jpg" alt="View photo 9" loading="lazy" />
         </div>
       </article>
     </section>
@@ -63,6 +103,49 @@
     </div>
   </footer>
 
+  <!-- Lightbox overlay -->
+  <div id="lightbox" class="lightbox-overlay" aria-modal="true" role="dialog" aria-hidden="true">
+    <div class="lightbox-content">
+      <img class="lightbox-img" alt="Expanded view" />
+      <button class="lightbox-close" aria-label="Close">✕</button>
+    </div>
+  </div>
+
   <script src="js/script.js"></script>
+  <script>
+    // Lightweight lightbox for gallery images
+    (function () {
+      const overlay = document.getElementById('lightbox');
+      const imgEl = overlay?.querySelector('.lightbox-img');
+      const closeBtn = overlay?.querySelector('.lightbox-close');
+      const images = document.querySelectorAll('.gallery img');
+      if (!overlay || !imgEl || !closeBtn || !images.length) return;
+
+      const open = (src, alt) => {
+        overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden', 'false');
+        imgEl.src = src;
+        imgEl.alt = alt || 'Expanded view';
+        document.body.style.overflow = 'hidden';
+      };
+      const close = () => {
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
+        imgEl.src = '';
+        document.body.style.overflow = '';
+      };
+
+      images.forEach(img => {
+        img.addEventListener('click', () => open(img.src, img.alt));
+        img.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') open(img.src, img.alt); });
+        img.tabIndex = 0; // keyboard open
+        img.role = 'button';
+        img.ariaLabel = 'Open photo';
+      });
+      overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+      closeBtn.addEventListener('click', close);
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && overlay.classList.contains('open')) close(); });
+    })();
+  </script>
 </body>
 </html>
