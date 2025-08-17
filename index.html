@@ -9,8 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-  <script defer src="js/pdf-viewer.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -61,20 +59,14 @@
       <div class="resume-bar">
         <h3 class="resume-title">Resume</h3>
         <div class="resume-actions">
+          <a class="icon-link" href="https://docs.google.com/gview?embedded=1&url=https://dianjin34.github.io/assets/resume.pdf?v=20250816" target="_blank" rel="noopener" title="Open via fallback viewer">Open in browser</a>
           <a class="icon-link" href="assets/resume.pdf?v=20250816" download title="Download PDF">Download</a>
           <button id="closeResume" class="icon-button" aria-label="Close resume">✕</button>
         </div>
       </div>
       <div class="resume-viewer">
-        <div id="pdfContainer" data-src="assets/resume.pdf?v=20250816">
-          <div class="fallback">
-            <p>Inline preview unavailable. You can still:</p>
-            <p>
-              <a class="btn primary" href="assets/resume.pdf?v=20250816" target="_blank" rel="noopener">Open in new tab</a>
-              <a class="btn" href="assets/resume.pdf?v=20250816" download>Download PDF</a>
-            </p>
-          </div>
-        </div>
+        <embed src="assets/resume.pdf?v=20250816#view=FitH" type="application/pdf" width="100%" height="100%" />
+        <p class="fallback">If the PDF doesn't display, please use the Download button above or open in a new tab.</p>
       </div>
     </section>
   </main>
