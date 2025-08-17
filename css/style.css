@@ -74,6 +74,9 @@ body {
 
 /* Footer */
 .site-footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 18px 0; color: var(--muted); }
+.footer-contact { margin-top: 8px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.footer-contact a { color: var(--text); text-decoration: none; opacity: 0.85; }
+.footer-contact a:hover { opacity: 1; text-decoration: underline; }
 
 /* Studio block */
 .studio .studio-content { display: grid; grid-template-columns: 1fr; gap: 14px; align-items: center; }
