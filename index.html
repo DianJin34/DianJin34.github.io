@@ -16,7 +16,7 @@
       <h1 class="logo" aria-label="Dian Jin">Dian Jin</h1>
       <nav class="nav">
         <a href="#about">About</a>
-        <a href="resume.html" target="_blank" rel="noopener" class="linklike">Resume</a>
+        <button id="navViewResume" class="linklike" aria-controls="resume" aria-expanded="false">Resume</button>
       </nav>
     </div>
   </header>
@@ -27,12 +27,25 @@
         <h2 id="intro-title">Hi 👋</h2>
         <p class="intro-text">"Hi, My name is Dian, I'm currently work in Deere. And I currently are partnership with my friends to run a studio. Welcome to this simple intro page!"</p>
         <div class="cta">
-          <a class="btn primary" href="resume.html" target="_blank" rel="noopener">View resume</a>
+          <button id="viewResume" class="btn primary" aria-controls="resume" aria-expanded="false">View resume</button>
           <a class="btn" href="assets/resume.pdf?v=20250816" download>Download PDF</a>
         </div>
       </div>
     </section>
-
+    <section id="resume" class="resume hidden" aria-hidden="true">
+      <div class="resume-bar">
+        <h3 class="resume-title">Resume</h3>
+        <div class="resume-actions">
+          <a class="icon-link" href="assets/resume.pdf?v=20250816" target="_blank" rel="noopener" title="Open in new tab">Open in new tab</a>
+          <a class="icon-link" href="assets/resume.pdf?v=20250816" download title="Download PDF">Download</a>
+          <button id="closeResume" class="icon-button" aria-label="Close resume">✕</button>
+        </div>
+      </div>
+      <div class="resume-viewer">
+        <embed src="assets/resume.pdf?v=20250816#view=FitH" type="application/pdf" width="100%" height="100%" />
+        <p class="fallback">If the PDF doesn't display, use the buttons above to open or download.</p>
+      </div>
+    </section>
     <section id="about" class="cards">
       <article class="card">
         <h3>About</h3>
