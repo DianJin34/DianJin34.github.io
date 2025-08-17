@@ -68,18 +68,9 @@ body {
 .card p { margin: 0; color: var(--muted); }
 @media (min-width: 720px) { .cards { grid-template-columns: 1fr 1fr; } }
 
-/* Resume panel */
-.resume { margin: 6px 0 36px; background: rgba(8,10,22,0.6); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,0.45); }
-.hidden { display: none; }
-.resume-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 14px; background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); border-bottom: 1px solid rgba(255,255,255,0.08); }
-.resume-title { margin: 0; font-size: 0.95rem; }
+/* Buttons/links */
 .icon-button, .icon-link { background: none; border: 1px solid rgba(255,255,255,0.12); color: var(--text); padding: 6px 10px; border-radius: 8px; cursor: pointer; text-decoration: none; }
 .icon-button:hover, .icon-link:hover { border-color: rgba(255,255,255,0.24); }
-.resume-viewer { height: min(70vh, 900px); background: #0b0f1f; }
-.resume-viewer #pdfContainer { width: 100%; height: 100%; }
-.resume-viewer object, .resume-viewer embed { width: 100%; height: 100%; border: 0; display: block; background: #0b0f1f; }
-.resume .fallback { margin: 8px 12px 14px; color: var(--muted); font-size: 0.9rem; }
-.resume-viewer #pdfAlt { background: #0b0f1f; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 8px; }
 
 /* Footer */
 .site-footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 18px 0; color: var(--muted); }
