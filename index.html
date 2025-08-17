@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script defer src="js/pdf-viewer.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -64,15 +66,15 @@
         </div>
       </div>
       <div class="resume-viewer">
-        <object data="assets/resume.pdf?v=20250816#view=FitH" type="application/pdf">
+        <div id="pdfContainer" data-src="assets/resume.pdf?v=20250816">
           <div class="fallback">
-            <p>Inline preview unavailable in your browser.</p>
+            <p>Inline preview unavailable. You can still:</p>
             <p>
               <a class="btn primary" href="assets/resume.pdf?v=20250816" target="_blank" rel="noopener">Open in new tab</a>
               <a class="btn" href="assets/resume.pdf?v=20250816" download>Download PDF</a>
             </p>
           </div>
-        </object>
+        </div>
       </div>
     </section>
   </main>
