@@ -59,13 +59,20 @@
       <div class="resume-bar">
         <h3 class="resume-title">Resume</h3>
         <div class="resume-actions">
-          <a class="icon-link" href="assets/resume.pdf" download title="Download PDF">Download</a>
+          <a class="icon-link" href="assets/resume.pdf?v=20250816" download title="Download PDF">Download</a>
           <button id="closeResume" class="icon-button" aria-label="Close resume">✕</button>
         </div>
       </div>
       <div class="resume-viewer">
-      <iframe src="assets/resume.pdf?v=20250816" title="Dian Jin — Resume" loading="lazy"></iframe>
-        <p class="fallback">If the PDF doesn't display, please use the Download button above.</p>
+        <object data="assets/resume.pdf?v=20250816#view=FitH" type="application/pdf">
+          <div class="fallback">
+            <p>Inline preview unavailable in your browser.</p>
+            <p>
+              <a class="btn primary" href="assets/resume.pdf?v=20250816" target="_blank" rel="noopener">Open in new tab</a>
+              <a class="btn" href="assets/resume.pdf?v=20250816" download>Download PDF</a>
+            </p>
+          </div>
+        </object>
       </div>
     </section>
   </main>
