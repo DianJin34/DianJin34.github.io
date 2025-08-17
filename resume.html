@@ -33,5 +33,19 @@
   <noscript>
     <p style="color:#e6e8f0;position:fixed;bottom:10px;left:10px;">JavaScript is disabled. If the PDF doesn’t display, <a href="assets/resume.pdf?v=20250816" style="color:#6aa9ff;">open the PDF</a>.</p>
   </noscript>
+  <script>
+    (function(){
+      const url = 'assets/resume.pdf?v=20250816';
+      const abs = new URL(url, location.href).href;
+      console.log('[Resume] PDF URL:', abs);
+      // Trigger a light-weight HEAD so it shows in Network and we see headers
+      fetch(abs, { method: 'HEAD', cache: 'no-store' })
+        .then(r => console.log('[Resume] HEAD status:', r.status, 'content-type:', r.headers.get('content-type')))
+        .catch(e => console.warn('[Resume] HEAD failed, trying GET…', e))
+        .finally(() => {
+          // Optionally, developers can switch to GET small-range for stubborn proxies
+        });
+    })();
+  </script>
 </body>
 </html>
